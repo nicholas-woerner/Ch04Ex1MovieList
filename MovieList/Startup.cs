@@ -14,8 +14,9 @@ namespace MovieList
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<MovieContextClass>(options => options.UseSqlServer(
-                Configuration.GetConnectionString("MovieContext")));
+            services.AddDbContext<MovieContext>(options => 
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("MovieContext")));
         }
     }
 }

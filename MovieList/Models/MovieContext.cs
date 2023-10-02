@@ -1,11 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic;
 
 namespace MovieList.Models
 {
-    public class MovieContextClass : DbContext
+    public class MovieContext : DbContext
     {
-        public MovieContextClass(DbContextOptions<MovieContextClass> options) 
+        public MovieContext(DbContextOptions<MovieContext> options) 
             : base(options)
         { }
         public DbSet<MovieClass> Movies { get; set; }
@@ -13,6 +12,7 @@ namespace MovieList.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
                 modelBuilder.Entity<MovieClass>().HasData(
+
                     new MovieClass
                     {
                         MovieId = 1,
